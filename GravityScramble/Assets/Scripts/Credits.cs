@@ -10,7 +10,7 @@ public class Credits : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-      if (Input.anyKey && Time.timeSinceLevelLoad > 3)
+      if (Input.anyKey && Time.timeSinceLevelLoad > 1.5f)
       {
          Application.LoadLevel(0);
       }
