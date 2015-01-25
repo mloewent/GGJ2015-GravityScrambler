@@ -10,6 +10,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/useTheShovel.unity
   - enabled: 1
-    path: Assets/Levels/level1.unity
+    path: Assets/Levels/gravIntro.unity
   - enabled: 1
-    path: Assets/Levels/level2.unity
+    path: Assets/Levels/thornTrick0.unity
+  - enabled: 1
+    path: Assets/Levels/thornTrick1.unity
