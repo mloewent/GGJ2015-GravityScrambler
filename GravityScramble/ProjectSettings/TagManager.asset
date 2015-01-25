@@ -6,6 +6,18 @@ TagManager:
   - wall
   - spikes
   - levelup
+  - blueshovel
+  - greenshovel
+  - redshovel
+  - blueaxe
+  - greenaxe
+  - redaxe
+  - bluedirt
+  - reddirt
+  - greendirt
+  - bluetree
+  - redtree
+  - greentree
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

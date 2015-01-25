@@ -13,6 +13,14 @@ namespace Assets.Scripts
          rigidbody2D.AddRelativeForce(new Vector2(0, -gravityForce));
       }
 
+      private bool hasRedShovel = false;
+      private bool hasGreenShovel = false;
+      private bool hasBlueShovel = false;
+      private bool hasRedAxe = false;
+      private bool hasGreenAxe = false;
+      private bool hasBlueAxe = false;
+
+
       public Sprite[] sprites;
       public SpriteRenderer spriteChanger;
       public float gravityForce;
@@ -77,6 +85,7 @@ namespace Assets.Scripts
 
       private void SetSpriteDown()
       {
+         facingRight = true;
          spriteChanger.sprite = sprites[0];
          ResetScale();
       }
@@ -259,6 +268,88 @@ namespace Assets.Scripts
          if (collider.gameObject.tag == "levelup")
          {
             LevelUp();
+         }
+
+         //Keys
+         if (collider.gameObject.tag == "redshovel")
+         {
+            hasRedShovel = true;
+            Destroy(collider.gameObject);
+         }
+         if (collider.gameObject.tag == "greenshovel")
+         {
+            hasGreenShovel = true;
+            Destroy(collider.gameObject);
+         }
+         if (collider.gameObject.tag == "blueshovel")
+         {
+            hasBlueShovel = true;
+            Destroy(collider.gameObject);
+         }
+         if (collider.gameObject.tag == "redaxe")
+         {
+            hasRedAxe = true;
+            Destroy(collider.gameObject);
+         }
+         if (collider.gameObject.tag == "greenaxe")
+         {
+            hasGreenAxe = true;
+            Destroy(collider.gameObject);
+         }
+         if (collider.gameObject.tag == "blueaxe")
+         {
+            hasBlueAxe = true;
+            Destroy(collider.gameObject);
+         }
+
+         //Doors
+         if (collider.gameObject.tag == "reddirt")
+         {
+            if (hasRedShovel)
+            {
+               hasRedShovel = false;
+               Destroy(collider.gameObject);
+            }
+         }
+         if (collider.gameObject.tag == "greendirt")
+         {
+            if (hasGreenShovel)
+            {
+               hasGreenShovel = false;
+               Destroy(collider.gameObject);
+            }
+         }
+         if (collider.gameObject.tag == "bluedirt")
+         {
+            if (hasBlueShovel)
+            {
+               hasBlueShovel= false;
+               Destroy(collider.gameObject);
+            }
+         }
+         if (collider.gameObject.tag == "redtree")
+         {
+            if (hasRedAxe)
+            {
+               hasRedAxe = false;
+               Destroy(collider.gameObject);
+            }
+         }
+         if (collider.gameObject.tag == "greentree")
+         {
+            if (hasGreenAxe)
+            {
+               hasGreenAxe = false;
+               Destroy(collider.gameObject);
+            }
+         }
+         if (collider.gameObject.tag == "bluetree")
+         {
+            if (hasBlueAxe)
+            {
+               hasBlueAxe = false;
+               Destroy(collider.gameObject);
+            }
          }
       }
 
