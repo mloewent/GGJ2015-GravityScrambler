@@ -2772,8 +2772,8 @@ MonoBehaviour:
   redShovel: {fileID: 0}
   blueShovel: {fileID: 0}
   sprites:
-  - {fileID: 21300000, guid: d57deab52c2ed7747b4304edd68edf3f, type: 3}
-  - {fileID: 21300000, guid: 0107d56c3a2cead4984e73d0e051938b, type: 3}
+  - {fileID: 21300000, guid: bb2e9e889089a444e85e8f27896cd1ca, type: 3}
+  - {fileID: 21300000, guid: 4f568d141fad714478b1a43160466e86, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   spriteChanger: {fileID: 736429254}
@@ -7142,7 +7142,7 @@ Prefab:
     - target: {fileID: 21259928, guid: d472f0e1fb84ac147a19cd2fda2a0849, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4461c06a8c16cb946a7888498900cd6c,
+      objectReference: {fileID: 21300000, guid: 1216ac6e5a9501848bbb43f6f14d18fd,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d472f0e1fb84ac147a19cd2fda2a0849, type: 2}
@@ -8100,7 +8100,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4461c06a8c16cb946a7888498900cd6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1216ac6e5a9501848bbb43f6f14d18fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2079798913
 Transform:

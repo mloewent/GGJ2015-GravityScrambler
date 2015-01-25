@@ -72,10 +72,10 @@ MonoBehaviour:
   redShovel: {fileID: 0}
   blueShovel: {fileID: 0}
   sprites:
-  - {fileID: 21300000, guid: d57deab52c2ed7747b4304edd68edf3f, type: 3}
-  - {fileID: 21300000, guid: 0107d56c3a2cead4984e73d0e051938b, type: 3}
-  - {fileID: 21300000, guid: ef07745ff0c56664f8d4f1b3dafb9ded, type: 3}
-  - {fileID: 21300000, guid: 969610dcaaee4264d94ca395a126b02e, type: 3}
+  - {fileID: 21300000, guid: bb2e9e889089a444e85e8f27896cd1ca, type: 3}
+  - {fileID: 21300000, guid: 4f568d141fad714478b1a43160466e86, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   spriteChanger: {fileID: 21215584}
   gravityForce: 12
   jumpTime: .300000012
