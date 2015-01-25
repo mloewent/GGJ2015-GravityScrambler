@@ -20,6 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/thornTrick1.unity
   - enabled: 1
-    path: Assets/Levels/level3.unity
-  - enabled: 1
     path: Assets/Levels/biggerBasicGrav.unity
+  - enabled: 1
+    path: Assets/Levels/level3.unity
