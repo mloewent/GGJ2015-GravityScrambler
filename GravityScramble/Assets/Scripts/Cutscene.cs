@@ -41,7 +41,7 @@ public class Cutscene : MonoBehaviour
 
 
 
-      if (Time.timeSinceLevelLoad > 4.83f && !movingScene1)
+      if (Time.timeSinceLevelLoad > 4.23f && !movingScene1)
       {
          movingScene1 = true;
          scenes[1].rigidbody2D.AddForce(new Vector2(1050, 0));

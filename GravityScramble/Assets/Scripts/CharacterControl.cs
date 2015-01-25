@@ -13,6 +13,10 @@ namespace Assets.Scripts
          rigidbody2D.AddRelativeForce(new Vector2(0, -gravityForce));
       }
 
+      public GameObject greenShovel;
+      public GameObject redShovel;
+      public GameObject blueShovel;
+
       private bool hasRedShovel = false;
       private bool hasGreenShovel = false;
       private bool hasBlueShovel = false;
@@ -273,17 +277,20 @@ namespace Assets.Scripts
          //Keys
          if (collider.gameObject.tag == "redshovel")
          {
+            redShovel.SetActive(true);
             hasRedShovel = true;
             Destroy(collider.gameObject);
          }
          if (collider.gameObject.tag == "greenshovel")
          {
+            greenShovel.SetActive(true);
             hasGreenShovel = true;
             Destroy(collider.gameObject);
          }
          if (collider.gameObject.tag == "blueshovel")
          {
             hasBlueShovel = true;
+            blueShovel.SetActive(true);
             Destroy(collider.gameObject);
          }
          if (collider.gameObject.tag == "redaxe")
@@ -308,6 +315,8 @@ namespace Assets.Scripts
             if (hasRedShovel)
             {
                hasRedShovel = false;
+               redShovel.SetActive(false);
+
                Destroy(collider.gameObject);
             }
          }
@@ -315,6 +324,8 @@ namespace Assets.Scripts
          {
             if (hasGreenShovel)
             {
+               greenShovel.SetActive(false);
+
                hasGreenShovel = false;
                Destroy(collider.gameObject);
             }
@@ -323,6 +334,8 @@ namespace Assets.Scripts
          {
             if (hasBlueShovel)
             {
+               blueShovel.SetActive(false);
+
                hasBlueShovel= false;
                Destroy(collider.gameObject);
             }
