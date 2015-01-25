@@ -98,7 +98,7 @@ AudioSource:
   m_GameObject: {fileID: 516001889}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b666966d5f2bcd44b97a02b1ce60dea2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4af37ae8c67a5e545a93027e5b73f03b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -315,7 +315,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1d2c7faed8defe548964089d16364526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44deedbd01a92f6429f553175b739775, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &994599908
 Transform:
