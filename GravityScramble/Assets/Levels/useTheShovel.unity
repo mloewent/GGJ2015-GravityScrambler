@@ -653,10 +653,10 @@ MonoBehaviour:
   redShovel: {fileID: 0}
   blueShovel: {fileID: 1968666919}
   sprites:
-  - {fileID: 21300000, guid: d57deab52c2ed7747b4304edd68edf3f, type: 3}
-  - {fileID: 21300000, guid: 0107d56c3a2cead4984e73d0e051938b, type: 3}
-  - {fileID: 21300000, guid: ef07745ff0c56664f8d4f1b3dafb9ded, type: 3}
-  - {fileID: 21300000, guid: 969610dcaaee4264d94ca395a126b02e, type: 3}
+  - {fileID: 21300000, guid: bb2e9e889089a444e85e8f27896cd1ca, type: 3}
+  - {fileID: 21300000, guid: 4f568d141fad714478b1a43160466e86, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   spriteChanger: {fileID: 736429254}
   gravityForce: 12
   jumpTime: .300000012
@@ -689,8 +689,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.27999878, y: 1.27999997}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .832330883, y: .965564847}
+  m_Center: {x: .0479645729, y: .018652916}
 --- !u!212 &736429254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1982,7 +1982,7 @@ Transform:
   m_LocalScale: {x: 3.18220115, y: 3.18219852, z: 3.18219852}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &1819568083
 Prefab:
   m_ObjectHideFlags: 0
@@ -2025,7 +2025,7 @@ Prefab:
     - target: {fileID: 21259928, guid: d472f0e1fb84ac147a19cd2fda2a0849, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a369066c38b5b2b45b8a8b12e29f2ee9,
+      objectReference: {fileID: 21300000, guid: 534d9db38e18a24409d0fa85a516f094,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d472f0e1fb84ac147a19cd2fda2a0849, type: 2}
@@ -2389,7 +2389,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a369066c38b5b2b45b8a8b12e29f2ee9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 534d9db38e18a24409d0fa85a516f094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2079798913
 Transform:
@@ -2402,7 +2402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &2100434057
 GameObject:
   m_ObjectHideFlags: 0
