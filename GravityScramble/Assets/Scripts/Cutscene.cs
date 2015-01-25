@@ -56,6 +56,7 @@ public class Cutscene : MonoBehaviour
       if (Time.timeSinceLevelLoad > 6.0f && !movingScene15)
       {
          movingScene15 = true;
+         //scenes[4].gameObject.SetActive(false);
          scenes[4].rigidbody2D.AddForce(new Vector2(0, -800));
       }
 
