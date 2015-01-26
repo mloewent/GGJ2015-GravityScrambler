@@ -3734,8 +3734,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .832330883, y: .965564847}
-  m_Center: {x: .0479645729, y: .018652916}
+  m_Size: {x: .832330883, y: 1.34278607}
+  m_Center: {x: .0479645729, y: .207263947}
 --- !u!212 &736429254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6336,6 +6336,14 @@ Prefab:
       propertyPath: blueShovel
       value: 
       objectReference: {fileID: 191535996}
+    - target: {fileID: 6115584, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d, type: 2}
+      propertyPath: m_Size.y
+      value: 1.34278607
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115584, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d, type: 2}
+      propertyPath: m_Center.y
+      value: .207263947
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d, type: 2}
   m_RootGameObject: {fileID: 736429250}
