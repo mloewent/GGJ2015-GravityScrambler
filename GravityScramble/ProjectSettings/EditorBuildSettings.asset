@@ -25,8 +25,8 @@ EditorBuildSettings:
     path: Assets/Levels/level3.unity
   - enabled: 1
     path: Assets/Levels/2keyyys.unity
-  - enabled: 0
-    path: Assets/Levels/biggerBasicGrav.unity
+  - enabled: 1
+    path: Assets/Levels/UpandDown.unity
   - enabled: 1
     path: Assets/Levels/ToughLuck.unity
   - enabled: 1
