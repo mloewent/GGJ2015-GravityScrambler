@@ -274,14 +274,12 @@ namespace Assets.Scripts
       {
          if (collider.gameObject.tag == "spikes")
          {
-				playSound(2);
+			playSound(2);
             Die();
-			
-				
          }
          if (collider.gameObject.tag == "levelup")
          {
-				playSound(3);
+			playSound(3);
             LevelUp();
 			
 				
