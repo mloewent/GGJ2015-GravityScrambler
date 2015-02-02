@@ -229,6 +229,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 893196777}
   - 82: {fileID: 893196776}
+  - 114: {fileID: 893196778}
   m_Layer: 0
   m_Name: TitleScreen
   m_TagString: Untagged
@@ -306,3 +307,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &893196778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 893196775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9db4d0edcada441b19e082fe7c8b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

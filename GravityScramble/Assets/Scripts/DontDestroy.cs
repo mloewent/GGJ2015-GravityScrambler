@@ -10,7 +10,10 @@ public class DontDestroy : MonoBehaviour {
 
    void Awake()
    {
-      DontDestroyOnLoad(gameObject);
+		if(Application.loadedLevelName != "credits" && Application.loadedLevelName != "StartScreen")
+			DontDestroyOnLoad(gameObject);
+
+
    }
 
 	// Update is called once per frame

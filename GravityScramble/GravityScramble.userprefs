@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DontDestroy.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterControl.cs" Line="380" Column="1" />
+      <File FileName="Assets\Scripts\DontDestroy.cs" Line="13" Column="93" />
+      <File FileName="Assets\Scripts\CharacterControl.cs" Line="346" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
