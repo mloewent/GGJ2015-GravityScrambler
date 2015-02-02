@@ -4372,6 +4372,7 @@ GameObject:
   - 61: {fileID: 736429253}
   - 50: {fileID: 736429252}
   - 114: {fileID: 736429251}
+  - 82: {fileID: 736429256}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -4405,6 +4406,12 @@ MonoBehaviour:
   jumpForce: 13.3199997
   speed: 6
   maxJumps: 1
+  audioClip:
+  - {fileID: 8300000, guid: 98242dda6e527a041b71fdb4abd10c17, type: 3}
+  - {fileID: 8300000, guid: 806166a71f61a864cbf98eb364435747, type: 3}
+  - {fileID: 8300000, guid: adadd18aeff68404d8f00367553b945b, type: 3}
+  - {fileID: 8300000, guid: 71393be8c49464045a602bc604cd6353, type: 3}
+  - {fileID: 8300000, guid: ad7e7b26dfd184c4aa5171e2b0e67c96, type: 3}
 --- !u!50 &736429252
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4468,6 +4475,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!82 &736429256
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8210534, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1353452854}
+  m_GameObject: {fileID: 736429250}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &739931703
 GameObject:
   m_ObjectHideFlags: 0
@@ -7184,7 +7250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 480002, guid: 7874972d28863384bb07280714ac18ea, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 180002, guid: 7874972d28863384bb07280714ac18ea, type: 2}
       propertyPath: m_IsActive
