@@ -38,6 +38,7 @@ namespace Assets.Scripts
       private int numJumps;
       public float speed;
       public int maxJumps;
+      public AudioClip[] audioClip;
 
       private enum GravDirection
       {
@@ -188,13 +189,16 @@ namespace Assets.Scripts
          //Jump Control
          if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && numJumps < maxJumps)
          {
+				playSound(1);
             numJumps++;
             jumpTimer = Time.time + jumpTime;
+    
          }
 
          //Change Grav Direction
          if (Input.GetKey(KeyCode.UpArrow) && CurrGravDirection != GravDirection.Up && !gravChanged)
          {
+				playSound(0);
             SetSpriteUp();
 
             gravChanged = true;
@@ -204,6 +208,7 @@ namespace Assets.Scripts
          }
          if (Input.GetKey(KeyCode.DownArrow) && CurrGravDirection != GravDirection.Down && !gravChanged)
          {
+				playSound(0);
             SetSpriteDown();
 
             gravChanged = true;
@@ -213,6 +218,7 @@ namespace Assets.Scripts
          }
          if (Input.GetKey(KeyCode.LeftArrow) && CurrGravDirection != GravDirection.Left && !gravChanged)
          {
+				playSound(0);
             SetSpriteLeft();
 
             gravChanged = true;
@@ -222,6 +228,7 @@ namespace Assets.Scripts
          }
          if (Input.GetKey(KeyCode.RightArrow) && CurrGravDirection != GravDirection.Right && !gravChanged)
          {
+				playSound(0);
             SetSpriteRight();
 
             gravChanged = true;
@@ -267,11 +274,17 @@ namespace Assets.Scripts
       {
          if (collider.gameObject.tag == "spikes")
          {
+				playSound(2);
             Die();
+			
+				
          }
          if (collider.gameObject.tag == "levelup")
          {
+				playSound(3);
             LevelUp();
+			
+				
          }
 
          //Keys
@@ -280,18 +293,21 @@ namespace Assets.Scripts
             redShovel.SetActive(true);
             hasRedShovel = true;
             Destroy(collider.gameObject);
+            playSound(4);
          }
          if (collider.gameObject.tag == "greenshovel")
          {
             greenShovel.SetActive(true);
             hasGreenShovel = true;
             Destroy(collider.gameObject);
+            playSound(4);
          }
          if (collider.gameObject.tag == "blueshovel")
          {
             hasBlueShovel = true;
             blueShovel.SetActive(true);
             Destroy(collider.gameObject);
+            playSound(4);
          }
          if (collider.gameObject.tag == "redaxe")
          {
@@ -374,6 +390,12 @@ namespace Assets.Scripts
       public void LevelUp()
       {
          Application.LoadLevel(Application.loadedLevel + 1);
+      }
+
+      void playSound(int clip) 
+      {
+         audio.clip = audioClip[clip];
+         audio.Play();
       }
    }
 }

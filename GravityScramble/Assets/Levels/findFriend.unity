@@ -455,6 +455,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11415584, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d, type: 2}
+      propertyPath: audioClip.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 415584, guid: ee6c7bd1a58e2b44faa0c60fc01bc88d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.03499997
@@ -684,6 +688,12 @@ MonoBehaviour:
   jumpForce: 13.3199997
   speed: 6
   maxJumps: 1
+  audioClip:
+  - {fileID: 8300000, guid: 98242dda6e527a041b71fdb4abd10c17, type: 3}
+  - {fileID: 8300000, guid: 806166a71f61a864cbf98eb364435747, type: 3}
+  - {fileID: 8300000, guid: adadd18aeff68404d8f00367553b945b, type: 3}
+  - {fileID: 8300000, guid: 71393be8c49464045a602bc604cd6353, type: 3}
+  - {fileID: 8300000, guid: ad7e7b26dfd184c4aa5171e2b0e67c96, type: 3}
 --- !u!50 &736429252
 Rigidbody2D:
   m_ObjectHideFlags: 0
