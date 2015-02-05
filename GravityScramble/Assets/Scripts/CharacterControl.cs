@@ -40,6 +40,11 @@ namespace Assets.Scripts
       public int maxJumps;
       public AudioClip[] audioClip;
 
+		public Animator player_anim;
+		public Animator limbs_anim;
+
+
+
       private enum GravDirection
       {
          Left,
@@ -68,7 +73,7 @@ namespace Assets.Scripts
 
          // Multiply the player's x local scale by -1
          Vector3 theScale = transform.localScale;
-         theScale.y *= -1;
+         theScale.x *= -1;
          transform.localScale = theScale;
       }
 
@@ -82,7 +87,8 @@ namespace Assets.Scripts
 
       private void SetSpriteLeft()
       {
-         spriteChanger.sprite = sprites[1];
+         //spriteChanger.sprite = sprites[1];
+			player_anim.SetTrigger("gravLeft");
          ResetScale();
          FlipHorizontal();
          facingUp = true;
@@ -91,24 +97,28 @@ namespace Assets.Scripts
       private void SetSpriteDown()
       {
          facingRight = true;
-         spriteChanger.sprite = sprites[0];
+         //spriteChanger.sprite = sprites[0];
+			player_anim.SetTrigger("gravDown");
          ResetScale();
       }
 
       private void SetSpriteRight()
       {
-         spriteChanger.sprite = sprites[1];
+         //spriteChanger.sprite = sprites[1];
+
          ResetScale();
          FlipVertical();
          facingUp = false;
-      }
+			player_anim.SetTrigger("gravRight");
+		}
 
       private void SetSpriteUp()
       {
-         spriteChanger.sprite = sprites[0];
+         //spriteChanger.sprite = sprites[0];
+			player_anim.SetTrigger("gravUp");
          ResetScale();
          facingRight = true;
-         FlipVertical();
+//         FlipVertical();
          FlipHorizontal();
       }
 
@@ -134,22 +144,25 @@ namespace Assets.Scripts
 
       void Update()
       {
+
          switch (CurrGravDirection)
          {
             case GravDirection.Down:
-               rigidbody2D.AddRelativeForce(new Vector2(0, -gravityForce));
+               rigidbody2D.AddForce(new Vector2(0, -gravityForce));
                break;
 
             case GravDirection.Left:
-               rigidbody2D.AddRelativeForce(new Vector2(-gravityForce, 0));
+               rigidbody2D.AddForce(new Vector2(-gravityForce, 0));
                break;
 
             case GravDirection.Right:
-               rigidbody2D.AddRelativeForce(new Vector2(gravityForce, 0));
+			   //rigidbody2D.AddRelativeForce(new Vector2(0, -gravityForce));
+
+               rigidbody2D.AddForce(new Vector2(gravityForce, 0));
                break;
 
             case GravDirection.Up:
-               rigidbody2D.AddRelativeForce(new Vector2(0, gravityForce));
+               rigidbody2D.AddForce(new Vector2(0, gravityForce));
                break;
          }
 
@@ -157,10 +170,11 @@ namespace Assets.Scripts
          {
             if (facingRight)
             {
-               FlipHorizontal();               
+               FlipHorizontal();
             }
             transform.position += Vector3.left * speed * Time.deltaTime;
-         }
+				limbs_anim.SetBool("walking", true);
+         }else
          if (Input.GetKey(KeyCode.D) && gravityVertical)
          {
             if (!facingRight)
@@ -168,7 +182,9 @@ namespace Assets.Scripts
                FlipHorizontal();
             }
             transform.position += Vector3.right * speed * Time.deltaTime;
-         }
+				limbs_anim.SetBool("walking", true);
+				
+         }else
          if (Input.GetKey(KeyCode.W) && !gravityVertical)
          {
             if (!facingUp)
@@ -176,7 +192,8 @@ namespace Assets.Scripts
                FlipVertical();
             }
             transform.position += Vector3.up * speed * Time.deltaTime;
-         }
+				limbs_anim.SetBool("walking", true);
+         }else
          if (Input.GetKey(KeyCode.S) && !gravityVertical)
          {
             if (facingUp)
@@ -184,7 +201,10 @@ namespace Assets.Scripts
                FlipVertical();
             }
             transform.position += Vector3.down * speed * Time.deltaTime;
-         }
+				limbs_anim.SetBool("walking", true);
+         }else
+				limbs_anim.SetBool("walking", false);
+
 
          //Jump Control
          if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && numJumps < maxJumps)
@@ -192,6 +212,7 @@ namespace Assets.Scripts
 				playSound(1);
             numJumps++;
             jumpTimer = Time.time + jumpTime;
+				//anim.SetTrigger("jumping");
     
          }
 
@@ -205,6 +226,7 @@ namespace Assets.Scripts
             CurrGravDirection = GravDirection.Up;
             rigidbody2D.velocity = Vector2.zero;
             gravityVertical = true;
+
          }
          if (Input.GetKey(KeyCode.DownArrow) && CurrGravDirection != GravDirection.Down && !gravChanged)
          {
@@ -215,6 +237,7 @@ namespace Assets.Scripts
             rigidbody2D.velocity = Vector2.zero;
             CurrGravDirection = GravDirection.Down;
             gravityVertical = true;
+
          }
          if (Input.GetKey(KeyCode.LeftArrow) && CurrGravDirection != GravDirection.Left && !gravChanged)
          {
@@ -230,11 +253,14 @@ namespace Assets.Scripts
          {
 				playSound(0);
             SetSpriteRight();
+				facingUp = false;
+
 
             gravChanged = true;
             rigidbody2D.velocity = Vector2.zero;
             CurrGravDirection = GravDirection.Right;
             gravityVertical = false;
+
          }
       
          //Apply force if isJumping
@@ -267,6 +293,7 @@ namespace Assets.Scripts
                gravChanged = false;            
             }
             numJumps = 0;
+//				anim.SetTrigger("landed");
          }
       }
 
