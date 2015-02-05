@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -39,6 +39,7 @@ namespace Assets.Scripts
       public float speed;
       public int maxJumps;
       public AudioClip[] audioClip;
+		private bool isDead = false;
 
 		public Animator player_anim;
 		public Animator limbs_anim;
@@ -166,7 +167,7 @@ namespace Assets.Scripts
                break;
          }
 
-         if (Input.GetKey(KeyCode.A) && gravityVertical)
+         if (Input.GetKey(KeyCode.A) && gravityVertical && !isDead)
          {
             if (facingRight)
             {
@@ -175,8 +176,8 @@ namespace Assets.Scripts
             transform.position += Vector3.left * speed * Time.deltaTime;
 				limbs_anim.SetBool("walking", true);
          }else
-         if (Input.GetKey(KeyCode.D) && gravityVertical)
-         {
+			if (Input.GetKey(KeyCode.D) && gravityVertical && !isDead)
+			{
             if (!facingRight)
             {
                FlipHorizontal();
@@ -185,8 +186,8 @@ namespace Assets.Scripts
 				limbs_anim.SetBool("walking", true);
 				
          }else
-         if (Input.GetKey(KeyCode.W) && !gravityVertical)
-         {
+			if (Input.GetKey(KeyCode.W) && !gravityVertical && !isDead)
+			{
             if (!facingUp)
             {
                FlipVertical();
@@ -194,8 +195,8 @@ namespace Assets.Scripts
             transform.position += Vector3.up * speed * Time.deltaTime;
 				limbs_anim.SetBool("walking", true);
          }else
-         if (Input.GetKey(KeyCode.S) && !gravityVertical)
-         {
+			if (Input.GetKey(KeyCode.S) && !gravityVertical && !isDead)
+			{
             if (facingUp)
             {
                FlipVertical();
@@ -207,8 +208,8 @@ namespace Assets.Scripts
 
 
          //Jump Control
-         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && numJumps < maxJumps)
-         {
+			if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && numJumps < maxJumps && !isDead)
+			{
 				playSound(1);
             numJumps++;
             jumpTimer = Time.time + jumpTime;
@@ -217,8 +218,8 @@ namespace Assets.Scripts
          }
 
          //Change Grav Direction
-         if (Input.GetKey(KeyCode.UpArrow) && CurrGravDirection != GravDirection.Up && !gravChanged)
-         {
+			if (Input.GetKey(KeyCode.UpArrow) && CurrGravDirection != GravDirection.Up && !gravChanged && !isDead)
+			{
 				playSound(0);
             SetSpriteUp();
 
@@ -228,8 +229,8 @@ namespace Assets.Scripts
             gravityVertical = true;
 
          }
-         if (Input.GetKey(KeyCode.DownArrow) && CurrGravDirection != GravDirection.Down && !gravChanged)
-         {
+			if (Input.GetKey(KeyCode.DownArrow) && CurrGravDirection != GravDirection.Down && !gravChanged && !isDead)
+			{
 				playSound(0);
             SetSpriteDown();
 
@@ -239,8 +240,8 @@ namespace Assets.Scripts
             gravityVertical = true;
 
          }
-         if (Input.GetKey(KeyCode.LeftArrow) && CurrGravDirection != GravDirection.Left && !gravChanged)
-         {
+			if (Input.GetKey(KeyCode.LeftArrow) && CurrGravDirection != GravDirection.Left && !gravChanged && !isDead)
+			{
 				playSound(0);
             SetSpriteLeft();
 
@@ -249,8 +250,8 @@ namespace Assets.Scripts
             CurrGravDirection = GravDirection.Left;
             gravityVertical = false;
          }
-         if (Input.GetKey(KeyCode.RightArrow) && CurrGravDirection != GravDirection.Right && !gravChanged)
-         {
+			if (Input.GetKey(KeyCode.RightArrow) && CurrGravDirection != GravDirection.Right && !gravChanged && !isDead)
+			{
 				playSound(0);
             SetSpriteRight();
 				facingUp = false;
@@ -302,14 +303,14 @@ namespace Assets.Scripts
          if (collider.gameObject.tag == "spikes")
          {
 				playSound(2);
-            Die();
+				StartCoroutine (Die ());
 			
 				
          }
          if (collider.gameObject.tag == "levelup")
          {
 				playSound(3);
-            LevelUp();
+				StartCoroutine (LevelUp ());
 			
 				
          }
@@ -409,14 +410,21 @@ namespace Assets.Scripts
          }
       }
 
-      public void Die()
-      {
-         Application.LoadLevel(Application.loadedLevel);
-      }
+      public IEnumerator Die()
+      {			
+			isDead = true;
+			yield return new WaitForSeconds (1.0f);
+			Application.LoadLevel(Application.loadedLevel);
+			isDead = false;
+		}
 
-      public void LevelUp()
+	  public IEnumerator LevelUp()
       {
-         Application.LoadLevel(Application.loadedLevel + 1);
+			
+			isDead = true;
+			yield return new WaitForSeconds (2.0f);
+			Application.LoadLevel(Application.loadedLevel + 1);
+			isDead = false;
       }
 
       void playSound(int clip) 
